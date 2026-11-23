@@ -1,0 +1,121 @@
+name: Build, test and SonarQube Cloud
+
+on:
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  SOLUTION: DataToExcel.sln
+  SONAR_ORG: luigimonsoft
+
+jobs:
+  test-debug:
+    name: Build and test (Debug)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore "$SOLUTION"
+
+      - name: Build
+        run: dotnet build "$SOLUTION" --configuration Debug --no-restore
+
+      - name: Run tests
+        run: dotnet test "$SOLUTION" --configuration Debug --no-build --no-restore
+
+  test-release:
+    name: Build, test and analyze (Release)
+    runs-on: ubuntu-latest
+
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore "$SOLUTION"
+
+      # Los PR de forks no reciben los secretos del repositorio.
+      - name: Determine whether SonarQube Cloud can run
+        id: sonar
+        shell: bash
+        run: |
+          if [[ "${{ github.event.pull_request.head.repo.full_name }}" != "$GITHUB_REPOSITORY" ]] \
+             || [[ "${{ github.actor }}" == "dependabot[bot]" ]]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::SonarQube Cloud se omite para este PR; las pruebas sí se ejecutarán."
+          elif [[ -z "$SONAR_TOKEN" || -z "$SONAR_PROJECT_KEY" ]]; then
+            echo "::error::Configura SONAR_TOKEN y SONAR_PROJECT_KEY como secretos del repositorio."
+            exit 1
+          else
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Cache SonarQube packages
+        if: steps.sonar.outputs.enabled == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+
+      - name: Install analysis and coverage tools
+        if: steps.sonar.outputs.enabled == 'true'
+        run: |
+          dotnet tool install --global dotnet-sonarscanner
+          dotnet tool install --global dotnet-coverage
+
+      - name: Begin SonarQube Cloud analysis
+        if: steps.sonar.outputs.enabled == 'true'
+        run: |
+          dotnet sonarscanner begin \
+            /k:"$SONAR_PROJECT_KEY" \
+            /o:"$SONAR_ORG" \
+            /d:sonar.host.url="https://sonarcloud.io" \
+            /d:sonar.token="$SONAR_TOKEN" \
+            /d:sonar.cs.vscoveragexml.reportsPaths="coverage.xml"
+
+      - name: Build
+        run: dotnet build "$SOLUTION" --configuration Release --no-restore
+
+      - name: Run tests with coverage
+        if: steps.sonar.outputs.enabled == 'true'
+        run: |
+          dotnet-coverage collect \
+            "dotnet test \"$SOLUTION\" --configuration Release --no-build --no-restore" \
+            -f xml \
+            -o coverage.xml
+
+      - name: Run tests without coverage
+        if: steps.sonar.outputs.enabled != 'true'
+        run: dotnet test "$SOLUTION" --configuration Release --no-build --no-restore
+
+      - name: Complete SonarQube Cloud analysis
+        if: steps.sonar.outputs.enabled == 'true'
+        run: dotnet sonarscanner end /d:sonar.token="$SONAR_TOKEN"
