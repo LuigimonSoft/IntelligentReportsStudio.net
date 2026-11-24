@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <!-- The example entry point is supplied by the separate source-structure activity. -->
+    <OutputType Condition="Exists('$(MSBuildProjectDirectory)/Program.cs')">Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../IntelligentReportStudio/IntelligentReportStudio.csproj" />
+  </ItemGroup>
+</Project>

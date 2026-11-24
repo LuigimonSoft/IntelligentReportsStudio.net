@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="src/IntelligentReportStudio/IntelligentReportStudio.csproj" />
+  <Project Path="src/IntelligentReportStudio.Examples/IntelligentReportStudio.Examples.csproj" />
+  <Project Path="tests/IntelligentReportStudio.UnitTests/IntelligentReportStudio.UnitTests.csproj" />
+  <Project Path="tests/IntelligentReportStudio.IntegrationTests/IntelligentReportStudio.IntegrationTests.csproj" />
+  <Project Path="tests/IntelligentReportStudio.BehaviorTests/IntelligentReportStudio.BehaviorTests.csproj" />
+  <Project Path="tests/IntelligentReportStudio.CompatibilityTests/IntelligentReportStudio.CompatibilityTests.csproj" />
+  <Project Path="tests/IntelligentReportStudio.ArchitectureTests/IntelligentReportStudio.ArchitectureTests.csproj" />
+</Solution>
