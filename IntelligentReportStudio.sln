@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio", "src\IntelligentReportStudio\IntelligentReportStudio.csproj", "{A54BD919-6427-4AA1-9310-7145B0DCFD01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio.Examples", "src\IntelligentReportStudio.Examples\IntelligentReportStudio.Examples.csproj", "{A54BD919-6427-4AA1-9310-7145B0DCFD02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio.UnitTests", "tests\IntelligentReportStudio.UnitTests\IntelligentReportStudio.UnitTests.csproj", "{A54BD919-6427-4AA1-9310-7145B0DCFD03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio.IntegrationTests", "tests\IntelligentReportStudio.IntegrationTests\IntelligentReportStudio.IntegrationTests.csproj", "{A54BD919-6427-4AA1-9310-7145B0DCFD04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio.BehaviorTests", "tests\IntelligentReportStudio.BehaviorTests\IntelligentReportStudio.BehaviorTests.csproj", "{A54BD919-6427-4AA1-9310-7145B0DCFD05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio.CompatibilityTests", "tests\IntelligentReportStudio.CompatibilityTests\IntelligentReportStudio.CompatibilityTests.csproj", "{A54BD919-6427-4AA1-9310-7145B0DCFD06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A54BD919-6427-4AA1-9310-7145B0DCFD01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54BD919-6427-4AA1-9310-7145B0DCFD06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
