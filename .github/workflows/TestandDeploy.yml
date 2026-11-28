@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  SOLUTION: DataToExcel.sln
+  SOLUTION: IntelligentReportStudio.sln
   SONAR_ORG: luigimonsoft
 
 jobs:
