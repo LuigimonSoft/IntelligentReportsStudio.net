@@ -1,0 +1,49 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio", "src\IntelligentReportStudio\IntelligentReportStudio.csproj", "{0D11D060-FE99-4C33-A98C-2DBB6B7A1001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio.Examples", "src\IntelligentReportStudio.Examples\IntelligentReportStudio.Examples.csproj", "{0D11D060-FE99-4C33-A98C-2DBB6B7A1002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio.UnitTests", "tests\IntelligentReportStudio.UnitTests\IntelligentReportStudio.UnitTests.csproj", "{0D11D060-FE99-4C33-A98C-2DBB6B7A1003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio.IntegrationTests", "tests\IntelligentReportStudio.IntegrationTests\IntelligentReportStudio.IntegrationTests.csproj", "{0D11D060-FE99-4C33-A98C-2DBB6B7A1004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio.BehaviorTests", "tests\IntelligentReportStudio.BehaviorTests\IntelligentReportStudio.BehaviorTests.csproj", "{0D11D060-FE99-4C33-A98C-2DBB6B7A1005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentReportStudio.CompatibilityTests", "tests\IntelligentReportStudio.CompatibilityTests\IntelligentReportStudio.CompatibilityTests.csproj", "{0D11D060-FE99-4C33-A98C-2DBB6B7A1006}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D11D060-FE99-4C33-A98C-2DBB6B7A1006}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
